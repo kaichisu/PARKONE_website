@@ -1,0 +1,121 @@
+@import url('theme.css'); /* 引入變數 */
+@import url('animations.css'); /* 引入動畫 */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background: var(--color-black);
+    color: var(--color-text);
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    transition: all 0.3s ease;
+}
+
+header.scrolled {
+    background: rgba(10, 10, 10, 0.98);
+    padding: 12px 0;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    background: none;
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    font-weight: 900;
+    letter-spacing: -1px;
+    font-size: 1.4em;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.logo:hover {
+    color: var(--color-text-secondary);
+    transform: translateY(-2px);
+}
+
+.hero {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background: var(--color-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: 
+        repeating-linear-gradient(
+            45deg,
+            var(--color-accent) 0,
+            var(--color-accent) 1px,
+            transparent 1px,
+            transparent var(--grid-size)
+        );
+    animation: gridRotate 60s linear infinite;
+    opacity: 0.1;
+    transform-origin: center;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(
+        circle at center,
+        transparent 0%,
+        rgba(10, 10, 10, 0.8) 60%,
+        rgba(10, 10, 10, 0.95) 100%
+    );
+}
+
+.floating-particles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.particle {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: var(--color-primary);
+    border-radius: 50%;
+    opacity: 0.4;
+    animation: float 15s infinite linear;
+    box-shadow: 0 0 10px var(--color-primary);
+}
+

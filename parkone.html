@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PARK ONE - 智慧停車場系統</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&display=swap" rel="stylesheet">
+    
+    
+    <!-- 外部 CSS -->   
+     <link rel="stylesheet" href="assets/css/theme.css">  <!-- 先載入變數 -->
+     <link rel="stylesheet" href="assets/css/animations.css">  <!-- 再載入動畫 -->
+     <link rel="stylesheet" href="assets/css/style.css">  <!-- 最後載入主要樣式 -->
+</head>
+<body>
+
+    <!-- JavaScript 外部檔案 -->
+    <script src="assets/js/main.js" defer></script>
+    <script src="assets/js/modal.js" defer></script>
+    <script src="assets/js/camera.js" defer></script>
+    <script src="assets/js/scroll.js" defer></script>
+    <script src="assets/js/stats.js" defer></script>
+
+
+    <div class="floating-particles">
+        <script>
+            function createParticles() {
+                const container = document.querySelector('.floating-particles');
+                for (let i = 0; i < 50; i++) {
+                    const particle = document.createElement('div');
+                    particle.className = 'particle';
+                    particle.style.left = Math.random() * 100 + 'vw';
+                    particle.style.top = Math.random() * 100 + 'vh';
+                    particle.style.animationDelay = Math.random() * 20 + 's';
+                    container.appendChild(particle);
+                }
+            }
+            window.addEventListener('load', createParticles);
+        </script>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">PARK ONE</div>
+                <nav class="nav-links">
+                    <a href="#home">首頁</a>
+                    <a href="#features">服務項目</a>
+                    <a href="#features-detail">系統特色</a>
+                    <a href="#about">品牌理念</a>
+                    <a href="#contact">聯絡我們</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- 英雄區塊 -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">PARK·ONE</h1>
+            <p class="hero-subtitle">智慧停車新紀元，體驗從此不同</p>
+            <button class="hero-btn" id="experienceBtn">立即體驗</button>
+        </div>
+    </section>
+    <!-- 服務項目 -->
+    <section class="features-section" id="features">
+        <div class="container">
+            <h2 class="section-title">服務項目</h2>
+            <div class="features">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="4" width="20" height="16" rx="2"/>
+                            <path d="M8 12h8M12 16V8"/>
+                        </svg>
+                    </div>
+                    <h3>智慧停車系統</h3>
+                    <p>運用先進 AI 技術，提供精準車牌辨識與自動化管理，打造無縫的智慧停車體驗。</p>
+                    <div class="feature-link">
+                        了解更多
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 6v6l4 2"/>
+                        </svg>
+                    </div>
+                    <h3>車位管理方案</h3>
+                    <p>整合即時監控與大數據分析，優化車位配置與使用效率，提供完整的管理解決方案。</p>
+                    <div class="feature-link">
+                        了解更多
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                        </svg>
+                    </div>
+                    <h3>停車場顧問服務</h3>
+                    <p>提供專業規劃建議與營運優化方案，協助您建立高效能的智慧化停車環境。</p>
+                    <div class="feature-link">
+                        了解更多
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features-detail">
+        <div class="container">
+            <h2 class="section-title">系統特色</h2>
+            <div class="features-grid">
+                <div class="feature-detail-card">
+                    <div class="feature-detail-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                        </svg>
+                    </div>
+                    <h3>高效辨識</h3>
+                    <p>AI 智能辨識系統，準確率達 90%</p>
+                </div>
+                <div class="feature-detail-card">
+                    <div class="feature-detail-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 16v-4M12 8h.01"/>
+                        </svg>
+                    </div>
+                    <h3>即時監控</h3>
+                    <p>24/7 全天候監控，異常即時通報</p>
+                </div>
+                <div class="feature-detail-card">
+                    <div class="feature-detail-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                        </svg>
+                    </div>
+                    <h3>數據分析</h3>
+                    <p>深度數據分析，優化營運策略</p>
+                </div>
+                <div class="feature-detail-card">
+                    <div class="feature-detail-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        </svg>
+                    </div>
+                    <h3>安全防護</h3>
+                    <p>多重安全機制，保障停車環境</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item" data-count="50">
+                    <div class="stat-number">0</div>
+                    <div class="stat-label">合作停車場</div>
+                </div>
+                <div class="stat-item" data-count="1000">
+                    <div class="stat-number">0</div>
+                    <div class="stat-label">日均車流量</div>
+                </div>
+                <div class="stat-item" data-count="98">
+                    <div class="stat-number">0</div>
+                    <div class="stat-label">客戶滿意度</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="vision-section" id="vision">
+        <div class="container">
+            <div class="vision-content">
+                <h2>未來願景</h2>
+                <div class="vision-grid">
+                    <div class="vision-item">
+                        <span class="vision-number">01</span>
+                        <h3>智能革新</h3>
+                        <p>運用AI技術，打造全自動化停車體驗，實現無縫接軌的智慧移動。</p>
+                    </div>
+                    <div class="vision-item">
+                        <span class="vision-number">02</span>
+                        <h3>永續未來</h3>
+                        <p>整合綠能科技，建構環保節能的智慧停車生態系統。</p>
+                    </div>
+                    <div class="vision-item">
+                        <span class="vision-number">03</span>
+                        <h3>創新體驗</h3>
+                        <p>突破傳統框架，創造前所未有的停車新體驗。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="about-content">
+                <h2 class="section-title">品牌理念</h2>
+                <div class="brand-philosophy">
+                    <div class="philosophy-card">
+                        <h3 class="philosophy-title">專業夥伴</h3>
+                        <p>PARK ONE 不僅僅是一家停車技術公司，更是您值得信賴的合作夥伴。我們以專業技術為基礎，運用AI技術打造全自動化停車體驗，實現無縫接軌的智慧移動。</p>
+                    </div>
+                    <div class="philosophy-card">
+                        <h3 class="philosophy-title">客戶至上</h3>
+                        <p>秉持著客戶至上的原則，我們提供專業的諮詢、客製化的解決方案和完善的售後服務，確保每位客戶的需求都能得到最佳滿足。</p>
+                    </div>
+                    <div class="philosophy-card">
+                        <h3 class="philosophy-title">永續發展</h3>
+                        <p>整合綠能科技，建構環保節能的智慧停車生態系統，為環境永續發展貢獻心力，共同打造更美好的未來城市。</p>
+                    </div>
+                    <div class="philosophy-card">
+                        <h3 class="philosophy-title">創新未來</h3>
+                        <p>持續創新是我們的核心價值，我們不斷探索新技術，突破傳統框架，為停車產業注入新活力，創造前所未有的智慧停車體驗。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>聯絡我們</h4>
+                    <p>電話：(02) 2345-6789</p>
+                    <p>信箱：contact@parkone.com</p>
+                    <p>地址：台北市信義區信義路五段7號</p>
+                </div>
+                <div class="footer-section">
+                    <h4>服務項目</h4>
+                    <p>智慧停車系統</p>
+                    <p>車位管理方案</p>
+                    <p>停車場顧問服務</p>
+                </div>
+                <div class="footer-section">
+                    <h4>關於 PARK ONE</h4>
+                    <p>PARK ONE 致力於提供創新的智慧停車解決方案，運用先進技術，為客戶打造更優質的停車體驗。</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 PARK ONE. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 模態視窗覆蓋層 -->
+    <div class="modal-overlay"></div>
+    
+    <!-- 智慧停車系統 Modal -->
+    <div class="service-modal" id="smart-parking-modal">
+        <div class="modal-header">
+            <h3 class="modal-title">智慧停車系統</h3>
+            <button class="modal-close">&times;</button>
+        </div>
+        <div class="modal-content">
+            <p class="service-description">
+                採用最新的人工智能技術，為您的停車場打造全方位的智慧管理系統。
+                從車牌辨識到收費管理，提供完整的自動化解決方案。
+            </p>
+            <div class="service-features">
+                <div class="service-feature">
+                    <h4>AI 車牌辨識</h4>
+                    <p>• 高精度辨識技術，準確率達 99%<br>
+                       • 支援各種車牌類型<br>
+                       • 快速處理，反應時間 &lt; 0.5秒</p>
+                </div>
+                <div class="service-feature">
+                    <h4>自動化管理</h4>
+                    <p>• 無人化收費系統<br>
+                       • 多元支付整合<br>
+                       • 自動對帳功能</p>
+                </div>
+                <div class="service-feature">
+                    <h4>即時監控</h4>
+                    <p>• 24/7 全天候監控<br>
+                       • 異常事件即時通報<br>
+                       • 遠端監控功能</p>
+                </div>
+                <div class="service-feature">
+                    <h4>數據分析</h4>
+                    <p>• 使用率分析<br>
+                       • 收入報表統計<br>
+                       • 趨勢預測功能</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal-footer">
+            <button class="modal-btn btn-secondary modal-close-btn">關閉</button>
+            <button class="modal-btn btn-primary">立即諮詢</button>
+        </div>
+    </div>
+
+    <!-- 車位管理方案 Modal -->
+    <div class="service-modal" id="parking-management-modal">
+        <div class="modal-header">
+            <h3 class="modal-title">車位管理方案</h3>
+            <button class="modal-close">&times;</button>
+        </div>
+        <div class="modal-content">
+            <p class="service-description">
+                結合智能監控系統與大數據分析，提供完整的車位管理解決方案，
+                協助您優化停車場使用效率，提升營運績效。
+            </p>
+            <div class="service-features">
+                <div class="service-feature">
+                    <h4>即時監控系統</h4>
+                    <p>• 車位使用狀態即時顯示<br>
+                       • 車流量動態監測<br>
+                       • 設備狀態監控</p>
+                </div>
+                <div class="service-feature">
+                    <h4>智能調度管理</h4>
+                    <p>• 尖峰時段車位配置<br>
+                       • 特殊車位預留機制<br>
+                       • 彈性收費策略</p>
+                </div>
+                <div class="service-feature">
+                    <h4>預約管理系統</h4>
+                    <p>• 線上預約功能<br>
+                       • 會員管理系統<br>
+                       • 自動確認機制</p>
+                </div>
+                <div class="service-feature">
+                    <h4>營運分析報表</h4>
+                    <p>• 收入分析報表<br>
+                       • 使用率統計<br>
+                       • 客戶行為分析</p>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="modal-btn btn-secondary modal-close-btn">關閉</button>
+            <button class="modal-btn btn-primary">了解更多</button>
+        </div>
+    </div>
+
+    <!-- 停車場顧問服務 Modal -->
+    <div class="service-modal" id="consultant-service-modal">
+        <div class="modal-header">
+            <h3 class="modal-title">停車場顧問服務</h3>
+            <button class="modal-close">&times;</button>
+        </div>
+        <div class="modal-content">
+            <p class="service-description">
+                提供專業的停車場規劃與營運顧問服務，從前期規劃到後期營運，
+                為您量身打造最適合的停車場解決方案。
+            </p>
+            <div class="service-features">
+                <div class="service-feature">
+                    <h4>場地規劃設計</h4>
+                    <p>• 空間配置規劃<br>
+                       • 動線最佳化<br>
+                       • 無障礙設計</p>
+                </div>
+                <div class="service-feature">
+                    <h4>營運策略規劃</h4>
+                    <p>• 營運模式建議<br>
+                       • 收費策略制定<br>
+                       • 成本效益分析</p>
+                </div>
+                <div class="service-feature">
+                    <h4>設備升級評估</h4>
+                    <p>• 現有設備評估<br>
+                       • 升級方案建議<br>
+                       • ROI 分析</p>
+                </div>
+                <div class="service-feature">
+                    <h4>人員培訓計畫</h4>
+                    <p>• 操作人員培訓<br>
+                       • 管理技能提升<br>
+                       • 持續改善建議</p>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="modal-btn btn-secondary modal-close-btn">關閉</button>
+            <button class="modal-btn btn-primary">預約諮詢</button>
+        </div>
+    </div>
+
+    <!-- 體驗智慧停車系統 Modal -->
+    <div class="service-modal" id="experience-modal">
+        <div class="modal-header">
+            <h3 class="modal-title">體驗智慧停車系統</h3>
+            <button class="modal-close">&times;</button>
+        </div>
+        <div class="modal-content">
+            <div class="parking-form">
+                <div class="parking-left">
+                    <div class="input-group">
+                        <label>車牌辨識</label>
+                        <div class="camera-container">
+                            <video id="videoElement" autoplay playsinline></video>
+                            <img id="capturedImage" alt="已拍攝的圖片">
+                            <div class="scanning-effect"></div>
+                        </div>
+                        <div class="camera-controls">
+                            <button id="captureBtn" class="action-btn">拍攝車牌</button>
+                            <button id="retakeBtn" class="action-btn secondary" style="display: none;">重新拍攝</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="parking-right">
+                    <div class="input-group">
+                        <label for="licensePlate">車牌號碼</label>
+                        <input type="text" id="licensePlate" 
+                               pattern="[A-Za-z0-9-]+" 
+                               maxlength="8" 
+                               placeholder="請輸入車牌號碼" 
+                               style="text-transform: uppercase;">
+                        
+                        <div class="virtual-keyboard">
+                            <div class="keyboard-key">1</div>
+                            <div class="keyboard-key">2</div>
+                            <div class="keyboard-key">3</div>
+                            <div class="keyboard-key">4</div>
+                            <div class="keyboard-key">5</div>
+                            <div class="keyboard-key">6</div>
+                            <div class="keyboard-key">7</div>
+                            <div class="keyboard-key">8</div>
+                            <div class="keyboard-key">9</div>
+                            <div class="keyboard-key">0</div>
+                            
+                            <div class="keyboard-key">A</div>
+                            <div class="keyboard-key">B</div>
+                            <div class="keyboard-key">C</div>
+                            <div class="keyboard-key">D</div>
+                            <div class="keyboard-key">E</div>
+                            <div class="keyboard-key">F</div>
+                            <div class="keyboard-key">G</div>
+                            <div class="keyboard-key">H</div>
+                            <div class="keyboard-key">I</div>
+                            <div class="keyboard-key">J</div>
+                            
+                            <div class="keyboard-key">K</div>
+                            <div class="keyboard-key">L</div>
+                            <div class="keyboard-key">M</div>
+                            <div class="keyboard-key">N</div>
+                            <div class="keyboard-key">O</div>
+                            <div class="keyboard-key">P</div>
+                            <div class="keyboard-key">Q</div>
+                            <div class="keyboard-key">R</div>
+                            <div class="keyboard-key">S</div>
+                            <div class="keyboard-key">T</div>
+                            
+                            <div class="keyboard-key">U</div>
+                            <div class="keyboard-key">V</div>
+                            <div class="keyboard-key">W</div>
+                            <div class="keyboard-key">X</div>
+                            <div class="keyboard-key">Y</div>
+                            <div class="keyboard-key">Z</div>
+                            <div class="keyboard-key">-</div>
+                            <div class="keyboard-key special">清除</div>
+                        </div>
+                    </div>
+
+                    <div class="camera-controls" style="justify-content: space-between; margin-top: auto;">
+                        <button id="enterBtn" class="action-btn">模擬入場</button>
+                        <button id="exitBtn" class="action-btn secondary">模擬出場</button>
+                    </div>
+                </div>
+
+                <div id="resultMessage" class="result-message"></div>
+            </div>
+        </div>
+    </div>
+
+    
+</body>
+</html>
